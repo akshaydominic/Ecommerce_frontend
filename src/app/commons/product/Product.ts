@@ -3,10 +3,10 @@ export class Products{
     sku:String;
     name:String;
     description:String;
-    unitPrice:number;
-    imageUrl:String;
+    unitprice:number;
+    imageurl:String;
     active:boolean;
-    unitsinStock:number;
-    dateCreated:Date;
-    lastUpdated:Date;
+    unitsinstock:number;
+    datecreated:Date;
+    lastupdated:Date;
 }
