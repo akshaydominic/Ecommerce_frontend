@@ -15,8 +15,8 @@ export class ProductService {
   constructor(private httpClient:HttpClient) { }
 
   getProductList(theCategoryId:number):Observable<Products[]>{
-
-    const searchUrl ='${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}';
+    const idpassed:number = theCategoryId;
+    const searchUrl =this.baseUrl+"/search/findByCategoryId?id="+idpassed;
     //@TODO need to build the URL based on category id ..will come back to this!!
     
     return this.httpClient.get<GetResponse>(searchUrl).pipe(
