@@ -10,15 +10,22 @@ import { Products } from '../commons/product/Product';
 })
 export class ProductService {
   private baseUrl="http://localhost:9190/products";
+  
 
   constructor(private httpClient:HttpClient) { }
 
-  getProductList():Observable<Products[]>{
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
+  getProductList(theCategoryId:number):Observable<Products[]>{
+
+    const searchUrl ='${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}';
+    //@TODO need to build the URL based on category id ..will come back to this!!
+    
+    return this.httpClient.get<GetResponse>(searchUrl).pipe(
       map(response=>response._embedded.products)
     );
   }
+ 
 }
+
 interface GetResponse{
   _embedded:{
     products:Products[];
