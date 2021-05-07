@@ -12,10 +12,10 @@
         </thead>
         <tbody *ngFor="let tempproduct of products">
             <tr>
-                <td><img src="{{tempproduct.imageurl}}" height="50"></td>
-                <td>{{tempproduct.name}}</td>
-                <td>{{tempproduct.unitprice | currency:'INR'}}</td>
-                <td>{{tempproduct.unitsinstock}}</td>
+                <td class="align-middle"><img src="{{tempproduct.imageurl}}" height="50"></td>
+                <td class="align-middle">{{tempproduct.name}}</td>
+                <td class="align-middle">{{tempproduct.unitprice | currency:'INR'}}</td>
+                <td class="align-middle">{{tempproduct.unitsinstock}}</td>
             </tr>
         </tbody>
     </table>
