@@ -6,6 +6,7 @@ import { ProductComponent } from './commons/product/product.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductService } from './services/product.service';
 import { Routes,RouterModule } from '@angular/router';
+import { ProductCategoryComponent } from './commons/product-category/product-category.component';
 
 
 const routes:Routes = [
@@ -19,7 +20,8 @@ const routes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent
+    ProductComponent,
+    ProductCategoryComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -4,11 +4,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { Products } from '../commons/product/Product';
+import { ProductCateogry } from '../commons/product/productcategory';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  
   private baseUrl="http://localhost:9190/products";
   
 
@@ -23,11 +25,22 @@ export class ProductService {
       map(response=>response._embedded.products)
     );
   }
+  getProductCategory() :Observable<ProductCateogry[]>{
+    const catUrl = this.baseUrl+"/product-category";
+    return this.httpClient.get<GetResponsecategory>(catUrl).pipe(
+      map(response=>response._embedded.products)
+    );
+  }
  
 }
 
 interface GetResponse{
   _embedded:{
     products:Products[];
+  }
+}
+interface GetResponsecategory{
+  _embedded:{
+    products:ProductCateogry[];
   }
 }
