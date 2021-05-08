@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { ProductCategory } from '../commons/product-category';
 import { Products } from '../commons/product/Product';
 import { ProductCateogry } from '../commons/product/productcategory';
 
@@ -12,6 +13,7 @@ import { ProductCateogry } from '../commons/product/productcategory';
 export class ProductService {
   
   private baseUrl="http://localhost:9190/products";
+  private productCategory = "http://localhost:9190/product-category";
   
 
   constructor(private httpClient:HttpClient) { }
