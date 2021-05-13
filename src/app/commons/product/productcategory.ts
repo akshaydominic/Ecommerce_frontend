@@ -1,4 +1,4 @@
 export class ProductCateogry{
-    id:any;
-    CategoryName:any;
+    id:number;
+    CategoryName:string;
 }
